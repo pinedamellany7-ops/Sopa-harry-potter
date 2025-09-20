@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sopa de Harry Potter</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #f5f5f5; text-align: center; }
+    h1 { color: gold; }
+    #grid { display: grid; grid-template-columns: repeat(15, 1.8em); gap: 2px; justify-content: center; margin: 20px auto; }
+    .cell { width: 1.8em; height: 1.8em; display: flex; align-items: center; justify-content: center;
+            background: #222; border-radius: 4px; user-select: none; cursor: pointer; }
+    .cell.selected { background: #444; }
+    .cell.found { background: #2d862d; color: white; }
+    #words { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 10px; }
+    .word { background: #333; padding: 4px 8px; border-radius: 6px; }
+    .word.found { text-decoration: line-through; color: #aaa; }
+    button { margin: 10px; padding: 10px 20px; border: none; border-radius: 8px; background: gold; color: #111; font-weight: bold; cursor: pointer; }
+    button:hover { background: #d4af37; }
+  </style>
+</head>
+<body>
+  <h1>⚡ Sopa de Harry Potter ⚡</h1>
+  <p>Encuentra todas las palabras ocultas</p>
+  <div id="grid"></div>
+  <div id="words"></div>
+  <p><span id="foundCount">0</span> / <span id="totalCount">0</span> encontradas</p>
+  <button id="reveal">Pista</button>
+  <button id="reset">Reiniciar</button>
+  <script src="app.js"></script>
+</body>
+</html>
